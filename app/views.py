@@ -3,9 +3,8 @@ import pickle
 import re
 import numpy as np
 
-model = pickle.load(open('model.pkl', 'rb'))
 
-app = Flask(__name__)
+from app import app, model
 
 
 @app.route('/',methods=['GET'])
@@ -95,6 +94,6 @@ def predict_covid1():
     else:
         return render_template('result1.html')
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)
