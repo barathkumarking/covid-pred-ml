@@ -81,10 +81,10 @@ def predict_covid1():
             familyPublicPlaces1 = 0
         pred=model.predict([[breath_prob1, fever1, drycough1, sorethroat1, hyperTension1, abroadtravel1, contact1, largeGathering1, publicExposedPlaces1, familyPublicPlaces1]])[0]
         pred1=model.predict_proba([[breath_prob1, fever1, drycough1, sorethroat1, hyperTension1, abroadtravel1, contact1, largeGathering1, publicExposedPlaces1, familyPublicPlaces1]])
-        if(pred1[0][1]*100>99):
+        if(pred1[0][1]*100>99.6):
             pred1[0][1]=98
             pred1[0][0]=2
-        if(pred1[0][1]*100<1):
+        if(pred1[0][1]*100<1.4):
             pred1[0][0]=98
             pred1[0][1]=2
         data = {'Task': 'Having Covid or Not', 'Have Covid': pred1[0][1] * 100, 'Dont have covid': pred1[0][0] * 100}
