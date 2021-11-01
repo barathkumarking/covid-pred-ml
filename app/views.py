@@ -3,8 +3,8 @@ import pickle
 import re
 import numpy as np
 
-
-from app import app, model
+model = pickle.load(open('model.pkl', 'rb'))
+from app import app
 
 
 @app.route('/',methods=['GET'])
