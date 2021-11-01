@@ -1,5 +1,5 @@
 from app import *
-
+model = pickle.load(open('model.pkl', 'rb'))
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('index.html')
