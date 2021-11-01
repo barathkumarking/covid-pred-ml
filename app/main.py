@@ -1,12 +1,4 @@
-from flask import Flask, request, render_template
-import pickle
-import re
-import numpy as np
-
-model = pickle.load(open('model.pkl', 'rb'))
-
-app = Flask(__name__)
-
+from app import *
 
 @app.route('/',methods=['GET'])
 def Home():
